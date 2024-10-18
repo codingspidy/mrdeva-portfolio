@@ -13,9 +13,6 @@ import Collections from './components/Collections';
 import FAQAccordion from './components/FAQAccordian';
 import Header from './components/Header';
 
-const featuredProducts = [
-  { src: Product1 }, { src: Product2 }, { src: Product3 }, { src: Product2 }
-]
 
 export default function LandingPage() {
   return (

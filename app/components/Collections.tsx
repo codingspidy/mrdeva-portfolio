@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+// import { useRef } from 'react'
 import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Navigation } from 'swiper/modules'
@@ -11,7 +11,7 @@ import 'swiper/css/navigation'
 import CarpetImage from '../images/carpet.jpg';
 
 export default function Collections() {
-  const swiperRef = useRef(null)
+  // const swiperRef = useRef(null)
 
   const products = [
     {
