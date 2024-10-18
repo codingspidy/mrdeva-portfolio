@@ -28,3 +28,8 @@ body {
   background: url("./images//hero.jpg") no-repeat center;
   background-size: cover;
 }
+
+/* .about {
+  background: linear-gradient(#ddd 1px, transparent 1px), linear-gradient(90deg, #ddd 1px, transparent 1px);
+  background-size: '20px 20px'
+} */

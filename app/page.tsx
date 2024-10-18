@@ -7,6 +7,9 @@ import Product3 from "./images/jeans.jpg";
 import SofaImage from "./images/sofa.jpg";
 import CarpetImage from "./images/carpet.jpg";
 import ConsultantImage from "./images/consultant.jpg"
+import ProductShowcase from './components/ProductShowcase';
+import LogoImage from './images/mrdevaitc-logo.png';
+import Collections from './components/Collections';
 
 const featuredProducts = [
   { src: Product1 }, { src: Product2 }, { src: Product3 }, { src: Product2 }
@@ -16,9 +19,18 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="bg-transparent shadow-sm absolute top-0 left-0 z-10 w-full">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-white border-b-2 border-b-[#0000FF]">MrDeva ITC</h1>
+      <header className="bg-transparent absolute top-0 left-0 z-10 w-full">
+        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+          <div>
+            <Image
+              src={LogoImage}
+              alt="Mr Deva Logo"
+              width={150}
+              height={150}
+              className="w-full h-auto"
+            />
+          </div>
+          {/* <h1 className="text-xl md:text-2xl font-bold text-white">MrDeva ITC</h1> */}
           <nav>
             <ul className="flex space-x-8">
               <li><Link href="#" className="text-white hover:text-gray-600">Home</Link></li>
@@ -32,46 +44,53 @@ export default function LandingPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative h-screen hero-section">
+      <section className="relative min-h-screen hero-section">
         {/* <Image
           src="/placeholder.svg?height=500&width=1920"
           alt="Furniture showcase"
           layout="fill"
           objectFit="cover"
         /> */}
-        <div className="absolute inset-0 container mx-auto px-4 py-4 bg-black bg-opacity-40 flex items-center justify-between">
-          <div className="text-white mt-[64px]">
+        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div className="relative container mx-auto min-h-screen px-6 py-4 pt-[80px] flex flex-col md:flex-row items-center justify-between">
+          <div className="text-white">
             <h2 className="text-4xl font-bold mb-4">Your Global Partner in Trading & Consultancy</h2>
             <p className="text-xl mb-8 max-w-3xl">We provide tailored solutions that ensure success across borders.</p>
             <button className="bg-[#0000FF] text-white px-8 py-3 rounded-md text-lg font-semibold hover:opacity-50 transition duration-300">
               Start Trading
             </button>
           </div>
-          <div className="container mx-auto p-4 flex gap-4 justify-end mt-[64px]">
+          <div className="container mx-auto p-4 flex gap-4 justify-end">
             {/* Top left: Chair */}
             <div className='flex flex-col gap-4'>
-              <div className="relative w-[250px] bg-gray-100 p-4 rounded-lg">
+              <div className="relative w-[250px] bg-gray-100">
                 <Image
                   src={SofaImage}
                   alt="Single comfort chair"
                   width={200}
                   height={200}
-                  className="w-full h-auto object-cover rounded-lg"
+                  className="w-full h-auto object-cover"
                 />
-                <div className="absolute top-2 left-2 bg-white px-2 py-1 rounded-full text-sm font-bold">
+                <div className="absolute -top-2 -left-2 bg-white px-2 py-1 rounded-full text-xs font-bold">
                   $20.00
                 </div>
-                <p className="mt-2 text-sm font-medium">Single comfort chair</p>
+                <div className="absolute bottom-2 left-2 text-xs font-bold bg-white px-2 py-1">
+                  Single comfort sofa
+                </div>
+
               </div>
 
               {/* Bottom left: Modern furniture */}
-              <div className="bg-gray-100 w-[250px] p-4 rounded-lg">
-                <h3 className="text-lg font-semibold mb-2">Modern & stylish furniture</h3>
+              <div className="relative bg-gray-100 w-[250px]">
+                {/* <h3 className="text-lg font-semibold mb-2">Modern & stylish Carpets</h3> */}
                 {/* <div className="flex items-center space-x-4">
                   <div className="text-3xl font-bold">13</div>
                   <div className="text-3xl font-bold">14</div>
                   <div className="text-3xl font-bold">15</div>
                 </div> */}
+                <h3 className="absolute bottom-2 right-2 w-[160px] px-2 py-1 text-xs font-bold bg-white text-black">
+                  Modern & stylish Carpets
+                </h3>
                 <Image
                   src={CarpetImage}
                   alt="Single comfort chair"
@@ -83,20 +102,20 @@ export default function LandingPage() {
             </div>
             <div className='flex flex-col gap-4'>
               {/* Top right: Team member */}
-              <div className="bg-gray-800 w-[200px] p-4 rounded-lg text-white flex flex-col items-center justify-center">
+              <div className="w-[200px] backdrop-blur-md p-4 text-white flex flex-col items-center justify-center">
                 <Image
                   src={ConsultantImage}
                   alt="Nico Williams Jr"
                   width={100}
                   height={100}
-                  className="w-28 h-40 object-cover mb-4"
+                  className="w-full object-cover mb-4"
                 />
-                <h3 className="text-lg font-semibold">Nico Williams Jr</h3>
-                <p className="text-sm text-gray-300">Agent property</p>
+                <h3 className="text-lg font-semibold">Suhail Akram</h3>
+                <p className="text-sm text-gray-300">Trade Consultant</p>
               </div>
 
               {/* Bottom right: Team stats */}
-              <div className="bg-white p-4 w-[200px] h-16 rounded-lg shadow flex items-center justify-between">
+              <div className="bg-white p-4 w-[200px] h-16 shadow flex items-center justify-between">
                 <div className="flex -space-x-2">
                   {[1, 2, 3].map((i) => (
                     <Image
@@ -120,7 +139,7 @@ export default function LandingPage() {
 
       </section>
 
-      <section className="py-20 bg-white text-center">
+      <section className="py-20 bg-white text-center bg-grid-pattern" style={{ backgroundSize: '30px 30px' }}>
         <div className="container mx-auto px-4">
           <h2 className="text-5xl font-serif font-bold text-[#050A30] mb-6">
             What We Do
@@ -136,132 +155,88 @@ export default function LandingPage() {
             Learn More <span className="ml-2">↗</span>
           </a>
         </div>
-      </section>
-
-      <div className="container mx-auto py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="relative h-[500px]">
-            <Image
-              src={Product1}
-              alt="Summer Collection"
-              layout="fill"
-              objectFit="cover"
-              className=""
-            />
-            <div className="absolute bottom-4 left-4 bg-white bg-opacity-75 px-2 py-1 rounded">
-              <span className="text-sm font-medium">Summer Collection</span>
-            </div>
-            <div className="absolute top-4 right-4 bg-primary text-primary-foreground px-2 py-1 rounded">
-              <span className="text-sm font-medium">Best Deals</span>
-            </div>
-          </div>
+        <div className="container mx-auto py-8 mt-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="space-y-4">
-              <div className="aspect-[4/3] w-full relative">
-                <Image
-                  src={Product2}
-                  alt="Hand Bags"
-                  layout="fill"
-                  objectFit="cover"
-                  className=""
-                />
-                <div className="absolute bottom-4 left-4 bg-white bg-opacity-75 px-2 py-1 rounded">
-                  <span className="text-sm font-medium">Hand Bags</span>
+            <div className="relative h-[500px]">
+              <Image
+                src={CarpetImage}
+                alt="Summer Collection"
+                layout="fill"
+                objectFit="cover"
+                className=""
+              />
+              <div className="absolute bottom-4 left-4 bg-white bg-opacity-75 px-2 py-1 rounded">
+                <span className="text-sm font-medium">Summer Collection</span>
+              </div>
+              <div className="absolute top-4 right-4 bg-primary text-primary-foreground px-2 py-1 rounded">
+                <span className="text-sm font-medium">Best Deals</span>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-4">
+                <div className="aspect-[4/3] w-full relative">
+                  <Image
+                    src={SofaImage}
+                    alt="Hand Bags"
+                    layout="fill"
+                    objectFit="cover"
+                    className=""
+                  />
+                  <div className="absolute bottom-4 left-4 bg-white bg-opacity-75 px-2 py-1 rounded">
+                    <span className="text-sm font-medium">Hand Bags</span>
+                  </div>
+                </div>
+                {/* <h3 className="text-lg font-semibold text-center">Hand Bags</h3> */}
+              </div>
+              <div className="space-y-4">
+                <div className="aspect-[4/3] w-full relative">
+                  <Image
+                    src={CarpetImage}
+                    alt="Cowgirl Hat"
+                    layout="fill"
+                    objectFit="cover"
+                    className=""
+                  />
+                  <div className="absolute bottom-4 left-4 bg-white bg-opacity-75 px-2 py-1 rounded">
+                    <span className="text-sm font-medium">Cowgirl Hat</span>
+                  </div>
+                </div>
+                {/* <h3 className="text-lg font-semibold text-center"></h3> */}
+              </div>
+              <div className="md:col-span-2 flex gap-4 items-center justify-between">
+                <div className="space-y-2 text-left">
+                  <h3 className="text-sm uppercase tracking-wide">Modern Design</h3>
+                  <h2 className="text-2xl font-bold">Furnitures and Sofas</h2>
+                  <button className='bg-[#0000FF] text-white px-6 py-2'>Shop Collection</button>
+                </div>
+                <div className="aspect-video w-full relative">
+                  <Image
+                    src={SofaImage}
+                    alt="Women's Flat Sandals"
+                    layout="fill"
+                    objectFit="cover"
+                    className=""
+                  />
                 </div>
               </div>
-              {/* <h3 className="text-lg font-semibold text-center">Hand Bags</h3> */}
             </div>
-            <div className="space-y-4">
-              <div className="aspect-[4/3] w-full relative">
-                <Image
-                  src={Product3}
-                  alt="Cowgirl Hat"
-                  layout="fill"
-                  objectFit="cover"
-                  className=""
-                />
-                <div className="absolute bottom-4 left-4 bg-white bg-opacity-75 px-2 py-1 rounded">
-                  <span className="text-sm font-medium">Cowgirl Hat</span>
-                </div>
-              </div>
-              {/* <h3 className="text-lg font-semibold text-center"></h3> */}
-            </div>
-            <div className="md:col-span-2 flex justify-between">
-              <div className="text-center space-y-2">
-                <h3 className="text-sm uppercase tracking-wide">Modern Design</h3>
-                <h2 className="text-2xl font-bold">Women's Flat Sandals</h2>
-                <button>Shop Collection</button>
-              </div>
-              <div className="aspect-video w-full relative">
-                <Image
-                  src={Product1}
-                  alt="Women's Flat Sandals"
-                  layout="fill"
-                  objectFit="cover"
-                  className=""
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Featured Products */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h3 className="text-2xl font-semibold mb-8">Featured Products</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {featuredProducts.map((item, index) => (
-              <div key={index} className="rounded-lg">
-                <Image
-                  src={item.src}
-                  alt={`Featured product ${item}`}
-                  width={300}
-                  height={200}
-                  className="mb-4 rounded w-full aspect-square object-cover"
-                />
-                <h4 className="text-xl font-semibold mb-2">Product Name</h4>
-                <p className="text-gray-600 mb-4">Short product description goes here.</p>
-                <button className="text-blue-600 font-semibold flex items-center">
-                  {/* Shop Now <ChevronRight className="h-4 w-4 ml-1" /> */} Show Now
-                </button>
-              </div>
-            ))}
           </div>
         </div>
       </section>
+
+      <ProductShowcase />
+
+      <Collections />
 
       {/* Value Proposition Banner */}
-      <section className="bg-blue-100 py-16">
+      <section className="bg-[#0000FF] py-24">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">
+          <h2 className="text-3xl text-white font-bold mb-4">
             Elevate Every Room with Exquisite Furniture
           </h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+          <p className="text-xl text-[#7EC8E3] max-w-3xl mx-auto">
             Crafted to Reflect Your Passions, Our Furniture Transforms Ordinary Spaces into Extraordinary Sanctuaries
           </p>
-        </div>
-      </section>
-
-      {/* Product Grid */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h3 className="text-2xl font-semibold mb-8">All Products</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[...Array(12)].map((_, index) => (
-              <div key={index} className="bg-gray-100 p-4 rounded-lg">
-                <Image
-                  src="/placeholder.svg?height=200&width=200"
-                  alt={`Product ${index + 1}`}
-                  width={200}
-                  height={200}
-                  className="mb-4 rounded"
-                />
-                <h4 className="text-lg font-semibold mb-2">Product Name</h4>
-                <p className="text-gray-600">$199.99</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -270,7 +245,7 @@ export default function LandingPage() {
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-8 md:mb-0">
             <Image
-              src="/placeholder.svg?height=400&width=600"
+              src={CarpetImage}
               alt="Transformed home"
               width={600}
               height={400}
@@ -298,7 +273,7 @@ export default function LandingPage() {
             {[1, 2, 3].map((item) => (
               <div key={item} className="relative h-64">
                 <Image
-                  src="/placeholder.svg?height=300&width=400"
+                  src={CarpetImage}
                   alt={`Best choice ${item}`}
                   layout="fill"
                   objectFit="cover"
@@ -346,7 +321,7 @@ export default function LandingPage() {
       </section>
 
       {/* Blog/Insights Section */}
-      <section className="py-16 bg-white">
+      {/* <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h3 className="text-2xl font-semibold mb-8 text-center">Creative Insights & Home Transformation Ideas</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -368,7 +343,7 @@ export default function LandingPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
