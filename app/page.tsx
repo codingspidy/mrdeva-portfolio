@@ -1,14 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
 // import { ChevronDown, ChevronRight, ShoppingCart } from 'lucide-react'
-import Product1 from "./images/fruits.jpg";
-import Product2 from "./images/vegetables.jpg";
-import Product3 from "./images/jeans.jpg";
 import SofaImage from "./images/sofa.jpg";
 import CarpetImage from "./images/carpet.jpg";
 import ConsultantImage from "./images/consultant.jpg"
 import ProductShowcase from './components/ProductShowcase';
-import LogoImage from './images/mrdevaitc-logo.png';
 import Collections from './components/Collections';
 import FAQAccordion from './components/FAQAccordian';
 import Header from './components/Header';
