@@ -60,16 +60,16 @@ export default function ProductShowcase() {
   if (!mounted) return null
 
   return (
-    <div className="bg-[#0000FF] text-white px-8 py-20">
-      <div className="max-w-6xl mx-auto flex">
+    <div className="text-[#050A30] px-8 py-20 overflow-hidden">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8">
         <div className="mb-8">
           {/* <span className="text-xl font-bold">01</span> */}
-          <h2 className="text-4xl font-bold mt-2">OUR NEW PRODUCT</h2>
-          <p className="mt-4 max-w-md">
+          <h2 className="text-4xl font-bold mt-2">Curated Picks</h2>
+          <p className="mt-4 max-w-md text-gray-600">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
           </p>
-          <a href="#" className="mt-4 bg-[#000C66] px-4 py-2 text-white hover:underline inline-flex items-center">
-            See All Product
+          <a href="#" className="mt-4 bg-[#0000FF] px-4 py-2 text-white hover:underline inline-flex items-center">
+            See All Products
             <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
@@ -77,15 +77,13 @@ export default function ProductShowcase() {
         </div>
         
         <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
+          modules={[Navigation, Autoplay]}
           spaceBetween={30}
           slidesPerView={3}
           autoplay={{
-            delay: 500,
+            delay: 3000,
             disableOnInteraction: false
         }}
-          navigation
-          pagination={{ clickable: true }}
           className="mySwiper"
         >
           {products.map((product) => (
@@ -96,14 +94,14 @@ export default function ProductShowcase() {
                   alt={product.title}
                   width={300}
                   height={400}
-                  className="w-full h-[350px] object-cover"
+                  className="h-[350px] object-cover"
                 />
                 <span className="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm">
                   {product.tag}
                 </span>
               </div>
               <h3 className="mt-4 font-bold">{product.title}</h3>
-              <p className="mt-2 text-sm">{product.description}</p>
+              <p className="mt-2 text-sm max-w-[300px]">{product.description}</p>
             </SwiperSlide>
           ))}
         </Swiper>

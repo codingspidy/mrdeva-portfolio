@@ -3,7 +3,7 @@
 import { useRef } from 'react'
 import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation } from 'swiper/modules'
+import { Autoplay, Navigation } from 'swiper/modules'
 
 // Import Swiper styles
 import 'swiper/css'
@@ -34,13 +34,33 @@ export default function Collections() {
       name: 'FLECK SEAMLESS SHORT',
       image: '/placeholder.svg?height=600&width=400',
     },
+    {
+      id: 5,
+      name: 'MIDI DRESS',
+      image: '/placeholder.svg?height=600&width=400',
+    },
+    {
+      id: 6,
+      name: 'MAXI SHIRT DRESS',
+      image: '/placeholder.svg?height=600&width=400',
+    },
+    {
+      id: 7,
+      name: 'ELEGANT DRESS',
+      image: '/placeholder.svg?height=600&width=400',
+    },
+    {
+      id: 8,
+      name: 'FLECK SEAMLESS SHORT',
+      image: '/placeholder.svg?height=600&width=400',
+    },
   ]
 
   return (
-    <section className="container mx-auto px-4 py-16 bg-grid-pattern" style={{ backgroundSize: '30px 30px' }}>
+    <section className="container mx-auto px-6 pt-32">
       <div className="flex justify-between items-center mb-8">
         <div>
-          <h2 className="text-4xl font-bold mb-2">LATEST PRODUCTS</h2>
+          <h2 className="text-4xl text-[#050A30] font-bold mb-2">Featured Collections</h2>
           <p className="text-gray-600">
             Embrace the essence of effortless style and unmatchable comfort with our collections.
           </p>
@@ -68,9 +88,13 @@ export default function Collections() {
       </div>
 
       <Swiper
-        modules={[Navigation]}
+        modules={[Navigation, Autoplay]}
         spaceBetween={20}
         slidesPerView={1}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false
+        }}
         breakpoints={{
           640: {
             slidesPerView: 2,
@@ -97,7 +121,7 @@ export default function Collections() {
                 height={600}
                 className="w-full h-[350px] transition-transform duration-300 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
                   <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
                   <button className="bg-white text-black px-4 py-2 hover:bg-gray-200 transition-colors duration-300">

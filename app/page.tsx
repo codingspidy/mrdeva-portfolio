@@ -10,6 +10,8 @@ import ConsultantImage from "./images/consultant.jpg"
 import ProductShowcase from './components/ProductShowcase';
 import LogoImage from './images/mrdevaitc-logo.png';
 import Collections from './components/Collections';
+import FAQAccordion from './components/FAQAccordian';
+import Header from './components/Header';
 
 const featuredProducts = [
   { src: Product1 }, { src: Product2 }, { src: Product3 }, { src: Product2 }
@@ -17,8 +19,8 @@ const featuredProducts = [
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
+    <div className="min-h-screen bg-grid-pattern" style={{ backgroundSize: '30px 30px' }}>
+      {/* Header
       <header className="bg-transparent absolute top-0 left-0 z-10 w-full">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
           <div>
@@ -30,19 +32,18 @@ export default function LandingPage() {
               className="w-full h-auto"
             />
           </div>
-          {/* <h1 className="text-xl md:text-2xl font-bold text-white">MrDeva ITC</h1> */}
           <nav>
             <ul className="flex space-x-8">
               <li><Link href="#" className="text-white hover:text-gray-600">Home</Link></li>
-              <li><Link href="#" className="text-white hover:text-gray-600">Shop</Link></li>
               <li><Link href="#" className="text-white hover:text-gray-600">About</Link></li>
               <li><Link href="#" className="text-white hover:text-gray-600">Contact</Link></li>
+              <li><Link href="#" className="bg-[#0000FF] px-4 py-2 text-white hover:text-gray-600">Shop Now!</Link></li>
             </ul>
           </nav>
 
         </div>
-      </header>
-
+      </header> */}
+<Header />
       {/* Hero Section */}
       <section className="relative min-h-screen hero-section">
         {/* <Image
@@ -52,18 +53,18 @@ export default function LandingPage() {
           objectFit="cover"
         /> */}
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-        <div className="relative container mx-auto min-h-screen px-6 py-4 pt-[80px] flex flex-col md:flex-row items-center justify-between">
-          <div className="text-white">
-            <h2 className="text-4xl font-bold mb-4">Your Global Partner in Trading & Consultancy</h2>
-            <p className="text-xl mb-8 max-w-3xl">We provide tailored solutions that ensure success across borders.</p>
-            <button className="bg-[#0000FF] text-white px-8 py-3 rounded-md text-lg font-semibold hover:opacity-50 transition duration-300">
+        <div className="relative container mx-auto min-h-screen px-4 md:px-6 pt-40 pb-20 md:pb-0 md:pt-[80px] flex gap-20 flex-col md:flex-row items-center justify-between">
+          <div className="text-white flex flex-col items-center md:items-start text-center md:text-left">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Your Global Partner in Trading & Consultancy</h2>
+            <p className="text-lg md:text-xl mb-8 max-w-3xl">We provide tailored solutions that ensure success across borders.</p>
+            <button className="bg-[#0000FF] text-white px-8 py-3 rounded-md text-base md:text-lg font-semibold hover:opacity-50 transition duration-300">
               Start Trading
             </button>
           </div>
           <div className="container mx-auto p-4 flex gap-4 justify-end">
             {/* Top left: Chair */}
             <div className='flex flex-col gap-4'>
-              <div className="relative w-[250px] bg-gray-100">
+              <div className="relative w-[150px] md:w-[250px] bg-gray-100">
                 <Image
                   src={SofaImage}
                   alt="Single comfort chair"
@@ -71,24 +72,24 @@ export default function LandingPage() {
                   height={200}
                   className="w-full h-auto object-cover"
                 />
-                <div className="absolute -top-2 -left-2 bg-white px-2 py-1 rounded-full text-xs font-bold">
+                <div className="absolute -top-2 -left-2 bg-white px-2 py-1 rounded-full text-[10px] md:text-xs font-bold">
                   $20.00
                 </div>
-                <div className="absolute bottom-2 left-2 text-xs font-bold bg-white px-2 py-1">
+                <div className="absolute bottom-2 left-2 text-[10px] md:text-xs font-bold bg-white px-2 py-1">
                   Single comfort sofa
                 </div>
 
               </div>
 
               {/* Bottom left: Modern furniture */}
-              <div className="relative bg-gray-100 w-[250px]">
+              <div className="relative bg-gray-100 w-[150px] md:w-[250px]">
                 {/* <h3 className="text-lg font-semibold mb-2">Modern & stylish Carpets</h3> */}
                 {/* <div className="flex items-center space-x-4">
                   <div className="text-3xl font-bold">13</div>
                   <div className="text-3xl font-bold">14</div>
                   <div className="text-3xl font-bold">15</div>
                 </div> */}
-                <h3 className="absolute bottom-2 right-2 w-[160px] px-2 py-1 text-xs font-bold bg-white text-black">
+                <h3 className="absolute bottom-2 right-2 w-[160px] px-2 py-1 text-[10px] md:text-xs font-bold bg-white text-black">
                   Modern & stylish Carpets
                 </h3>
                 <Image
@@ -102,20 +103,20 @@ export default function LandingPage() {
             </div>
             <div className='flex flex-col gap-4'>
               {/* Top right: Team member */}
-              <div className="w-[200px] backdrop-blur-md p-4 text-white flex flex-col items-center justify-center">
+              <div className="w-[150px] md:w-[200px] h-[200px] md:h-auto backdrop-blur-md p-4 text-white flex flex-col items-center justify-center">
                 <Image
                   src={ConsultantImage}
                   alt="Nico Williams Jr"
                   width={100}
                   height={100}
-                  className="w-full object-cover mb-4"
+                  className="w-full h-[120px] md:h-auto object-contain mb-4"
                 />
-                <h3 className="text-lg font-semibold">Suhail Akram</h3>
-                <p className="text-sm text-gray-300">Trade Consultant</p>
+                <h3 className="text-base md:text-lg font-semibold">Suhail Akram</h3>
+                <p className="text-xs md:text-sm text-gray-300">Trade Consultant</p>
               </div>
 
               {/* Bottom right: Team stats */}
-              <div className="bg-white p-4 w-[200px] h-16 shadow flex items-center justify-between">
+              <div className="bg-white p-4 w-[150px] md:w-[200px] h-16 shadow flex items-center justify-between">
                 <div className="flex -space-x-2">
                   {[1, 2, 3].map((i) => (
                     <Image
@@ -124,13 +125,13 @@ export default function LandingPage() {
                       alt={`Team member ${i}`}
                       width={40}
                       height={40}
-                      className="w-8 h-8 rounded-full border-2 border-white"
+                      className="w-7 h-7 md:w-8 md:h-8 rounded-full border-2 border-white"
                     />
                   ))}
                 </div>
                 <div className="text-right">
-                  <p className="text-sm font-bold">120,000+</p>
-                  <p className="text-xs text-gray-600">Items sold out</p>
+                  <p className="text-xs md:text-sm font-bold">120,000+</p>
+                  <p className="text-[10px] md:text-xs text-gray-600">Items sold out</p>
                 </div>
               </div>
             </div>
@@ -139,8 +140,8 @@ export default function LandingPage() {
 
       </section>
 
-      <section className="py-20 bg-white text-center bg-grid-pattern" style={{ backgroundSize: '30px 30px' }}>
-        <div className="container mx-auto px-4">
+      <section className='pt-40 px-6 text-center'>
+      <div className="container mx-auto px-4">
           <h2 className="text-5xl font-serif font-bold text-[#050A30] mb-6">
             What We Do
           </h2>
@@ -155,9 +156,16 @@ export default function LandingPage() {
             Learn More <span className="ml-2">↗</span>
           </a>
         </div>
-        <div className="container mx-auto py-8 mt-16">
+      </section>
+
+      <Collections />
+
+
+      <section className="py-12 px-6">
+        
+        <div className="container mx-auto py-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="relative h-[500px]">
+            <div className="relative h-[500px] order-4 md:-order-1">
               <Image
                 src={CarpetImage}
                 alt="Summer Collection"
@@ -203,11 +211,11 @@ export default function LandingPage() {
                 </div>
                 {/* <h3 className="text-lg font-semibold text-center"></h3> */}
               </div>
-              <div className="md:col-span-2 flex gap-4 items-center justify-between">
+              <div className="-order-1 md:order-4 md:col-span-2 flex gap-4 items-center justify-between">
                 <div className="space-y-2 text-left">
                   <h3 className="text-sm uppercase tracking-wide">Modern Design</h3>
                   <h2 className="text-2xl font-bold">Furnitures and Sofas</h2>
-                  <button className='bg-[#0000FF] text-white px-6 py-2'>Shop Collection</button>
+                  <button className='bg-[#0000FF] text-white text-nowrap px-6 py-2'>Shop Collections</button>
                 </div>
                 <div className="aspect-video w-full relative">
                   <Image
@@ -224,24 +232,14 @@ export default function LandingPage() {
         </div>
       </section>
 
+     
+
       <ProductShowcase />
 
-      <Collections />
-
-      {/* Value Proposition Banner */}
-      <section className="bg-[#0000FF] py-24">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl text-white font-bold mb-4">
-            Elevate Every Room with Exquisite Furniture
-          </h2>
-          <p className="text-xl text-[#7EC8E3] max-w-3xl mx-auto">
-            Crafted to Reflect Your Passions, Our Furniture Transforms Ordinary Spaces into Extraordinary Sanctuaries
-          </p>
-        </div>
-      </section>
+     
 
       {/* Transform Your Home Section */}
-      <section className="py-16 bg-gray-100">
+      <section className="py-16">
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-8 md:mb-0">
             <Image
@@ -258,14 +256,29 @@ export default function LandingPage() {
               Our carefully curated collection brings together the perfect blend of style, comfort, and functionality.
               Elevate your living spaces with our exquisite pieces designed to inspire and delight.
             </p>
-            <button className="bg-gray-900 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-800 transition duration-300">
+            <button className="bg-[#0000FF] text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-800 transition duration-300">
               Explore Collections
             </button>
           </div>
         </div>
       </section>
 
-      {/* Best Choice Section */}
+       {/* Value Proposition Banner */}
+       {/* <section className="bg-[#0000FF] py-24">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl text-white font-bold mb-4">
+            Elevate Every Room with Exquisite Furniture
+          </h2>
+          <p className="text-xl text-[#7EC8E3] max-w-3xl mx-auto">
+            Crafted to Reflect Your Passions, Our Furniture Transforms Ordinary Spaces into Extraordinary Sanctuaries
+          </p>
+          <a href='#' className='px-10 py-3 bg-[#000C66] text-white mt-4 inline-block'>
+            Shop Now
+          </a>
+        </div>
+      </section> */}
+
+      {/* Best Choice Section
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h3 className="text-2xl font-semibold mb-8 text-center">Best Choice Our Furniture</h3>
@@ -283,26 +296,11 @@ export default function LandingPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* FAQ Section */}
-      <section className="py-16 bg-gray-100">
-        <div className="container mx-auto px-4">
-          <h3 className="text-2xl font-semibold mb-8 text-center">Frequently Asked Questions</h3>
-          <div className="space-y-4 max-w-3xl mx-auto">
-            {[1, 2, 3, 4].map((item) => (
-              <div key={item} className="bg-white p-6 rounded-lg shadow-sm">
-                <button className="flex justify-between items-center w-full text-left">
-                  <span className="text-lg font-semibold">Question {item}?</span>
-                  {/* <ChevronDown className="h-5 w-5 text-gray-500" /> */}
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+     <FAQAccordion />
 
-      {/* Newsletter Section */}
+      {/* Newsletter Section
       <section className="py-16 bg-blue-100">
         <div className="container mx-auto px-4 text-center">
           <h3 className="text-2xl font-semibold mb-4">Stay Updated with Our Latest Designs</h3>
@@ -318,7 +316,7 @@ export default function LandingPage() {
             </button>
           </form>
         </div>
-      </section>
+      </section> */}
 
       {/* Blog/Insights Section */}
       {/* <section className="py-16 bg-white">
@@ -346,12 +344,12 @@ export default function LandingPage() {
       </section> */}
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-[#050A30] text-white py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <h4 className="text-lg font-semibold mb-4">Furnish</h4>
-              <p className="text-gray-400">Elevating spaces with exquisite furniture designs.</p>
+              <h4 className="text-lg font-semibold mb-4">MR DEVA ITC</h4>
+              <p className="text-gray-400">Lorem ipsum dolor emet consecutvr enuhen emnuj dipehj.</p>
             </div>
             <div>
               <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
@@ -379,7 +377,7 @@ export default function LandingPage() {
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-gray-800 text-center">
-            <p className="text-gray-400">&copy; 2024 Furnish. All rights reserved.</p>
+            <p className="text-gray-400">&copy; 2024 MR DEVA ITC. All rights reserved.</p>
           </div>
         </div>
       </footer>
